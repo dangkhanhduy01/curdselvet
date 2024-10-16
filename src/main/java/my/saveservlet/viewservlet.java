@@ -15,6 +15,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import my.common.Database;
 
 /**
  *
@@ -45,11 +46,9 @@ public class viewservlet extends HttpServlet {
         String data="";
         try{
             //1. Nạp driver
-            Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
-            //System.out.println("Nap driver OK");
-            //2. Thiết lập kết nối CSDL
-            conn = DriverManager.getConnection("jdbc:sqlserver://PC344;databaseName=demodb", "sa", "sa");
-            //System.out.println("Ket noi OK");
+            conn = Database.getConnection();
+            
+           System.out.println("Ket noi OK");
             //3. Tạo đối tượng thi hành truy vấn
             ps = conn.prepareStatement("select * from users ");          
             //4. Thi hành truy vấn

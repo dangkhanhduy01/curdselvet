@@ -42,10 +42,7 @@ public class saveservlet extends HttpServlet {
         Connection conn = null;
         PreparedStatement ps=null;
         try{
-            conn=Database.getConnection();
-            //Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
-            //2. Thiết lập kết nối CSDL
-            conn = DriverManager.getConnection("jdbc:sqlserver://PC344;databaseName=demodb", "sa", "sa");
+            conn=Database.getConnection();           
             //3. Tạo đối tượng thi hành truy vấn
             ps = conn.prepareStatement("insert into users(name,password,email,country) values(?,?,?,?)");
             //Truyền giá trị cho các tham số trong câu lệnh SQL

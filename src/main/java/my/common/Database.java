@@ -18,13 +18,17 @@ public class Database {
         Connection conn = null;
         try{
             //1. Nạp driver
-            Class.forName("com.Microsoft.sqlserver.jdbc.SQLServerDriver");
+            Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
             //2. Thiết lập kết nối CSDL
-             conn = DriverManager.getConnection("jdbc:sqlserver://PC344;databaseName=demodb", "sa", "sa");
+             conn = DriverManager.getConnection("jdbc:sqlserver://pc334;databaseName=demodb", "sa", "sa");
         }catch (Exception e){
             System.out.println("Loi:" + e.toString());
         }
         return conn;
+    }
+   
+    public static void main(String[] args) {
+        System.out.println(Database.getConnection());
     }
 }
 

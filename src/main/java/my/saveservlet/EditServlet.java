@@ -102,7 +102,7 @@ public class EditServlet extends HttpServlet {
                     out.println("<h2>Thao tác xoá user thất bại</h2>");
                 }
                 //Chèn nội dung của ViewServlet vào kết nối hồi đáp
-                // request.getRequestDispatcher("ViewServlet").include(request, response);
+                 request.getRequestDispatcher("ViewServlet").include(request, response);
             } else if (method.equalsIgnoreCase("post")) {
                 //b1. Lấy giá trị tham số từ client
                 String uname = request.getParameter("uname");
